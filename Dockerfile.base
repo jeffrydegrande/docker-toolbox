@@ -1,0 +1,12 @@
+FROM debian:jessie
+MAINTAINER jeffry@jeffrydegrande.com
+
+RUN apt-get update
+RUN apt-get install -y git gcc vim
+
+RUN mkdir -p /code
+VOLUME ["/code"]
+
+RUN git clone https://github.com/jeffrydegrande/dotfiles ~/.dotfiles
+
+CMD ["/bin/bash"]
